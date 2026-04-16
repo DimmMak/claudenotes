@@ -22,32 +22,71 @@
 
 ---
 
+## 🎮 The Team — Your 8 Pokémon (Gen 1)
+
+Each agent is canonically mapped to a Gen 1 Pokémon. Treat your repo like a battle team.
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║  🥇 ALAKAZAM   #065  /recall   — IQ 5000, perfect memory     ║
+║  ⚡ PIKACHU    #025  /capture  — Quick Attack priority spam  ║
+║  ⭐ EEVEE      #133  /evolve   — THE Evolution Pokémon       ║
+║  🌸 MEW        #151  /notes    — knows every move (router)   ║
+║  🦅 PIDGEOT    #018  /map      — Mach 2 scout, bird's-eye    ║
+║  😴 SNORLAX    #143  /distill  — 460kg of compressed mass    ║
+║  🧲 MAGNETON   #082  /connect  — 3 magnets fused as network  ║
+║  💪 MACHAMP    #068  /sort     — 4 arms, 100 punches/2 sec   ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+### 📘 Pokédex roles
+
+| Slot | Pokémon | Agent | Real Job |
+|---|---|---|---|
+| 1 | 🌸 **MEW** #151 | `/notes` | Orchestrator. Routes intent to right specialist. |
+| 2 | ⚡ **PIKACHU** #025 | `/capture` | Spam filler. Quick Attack = priority capture, no friction. |
+| 3 | 💪 **MACHAMP** #068 | `/sort` | Cleanup. 4 arms = parallel inbox routing. |
+| 4 | 🧲 **MAGNETON** #082 | `/connect` | Linker. Magnetic pull between related notes. |
+| 5 | 😴 **SNORLAX** #143 | `/distill` | Compressor. Massive density, holds Leftovers (archive). |
+| 6 | 🥄 **ALAKAZAM** #065 | `/recall` | Memory. IQ 5000, drills first-letter recall. |
+| 7 | 🦅 **PIDGEOT** #018 | `/map` | Scout. Flies at Mach 2, sees the whole map. |
+| 8 | ⭐ **EEVEE** #133 | `/evolve` | Adapter. Mutates based on environment (your usage). |
+
+### ⚔️ Battle priority (most-used first)
+
+```
+🥇 PIKACHU  ⚡ → spam during every lecture (Quick Attack priority)
+🥈 MACHAMP  💪 → cleanup after sessions
+🥉 ALAKAZAM 🥄 → daily morning quiz
+4️⃣ MAGNETON 🧲 → burst window: link related notes
+5️⃣ SNORLAX  😴 → maintenance: compress fat files
+6️⃣ PIDGEOT  🦅 → passive scout: refresh sitemap
+7️⃣ MEW      🌸 → fallback when intent is ambiguous
+8️⃣ EEVEE    ⭐ → SUNDAY ONLY — weekly evolution event
+```
+
+> **`/capture` IS the rotation. Everything else is a cooldown.**
+> Treat Pikachu's Quick Attack like a Combo Point builder — spam constantly, the finishers (Machamp, Magneton) consume what you generated.
+
+---
+
 ## 🤖 The Agent Factory
 
-Seven specialist agents, one orchestrator. Each agent has ONE job and does it well.
+Eight agents. One foolproof entry point. One shared brain.
 
 ```
               ┌─────────────────┐
-              │   /notes        │  ← single entry point
+              │   /notes  🌸    │  ← single entry point
               │  (orchestrator) │
               └────────┬────────┘
                        │ routes to:
        ┌───────┬───────┼───────┬───────┬───────┬───────┐
        ▼       ▼       ▼       ▼       ▼       ▼       ▼
-   /capture /sort  /connect /distill /recall /map  /evolve
+   /capture /sort /connect /distill /recall /map  /evolve
+      ⚡     💪     🧲       😴       🥄    🦅     ⭐
 ```
 
-| Agent | Job |
-|---|---|
-| 📥 **/capture** | Quick brain-dump. No judgement. Lands in `inbox/`. |
-| 🗂️ **/sort** | Routes captures from inbox into the right folder/file. |
-| 🔗 **/connect** | Finds cross-links between new notes and existing ones. |
-| 💎 **/distill** | Compresses verbose notes into bullet essentials. |
-| 🧠 **/recall** | Quizzes you on YOUR notes (first-letter recall mechanic). |
-| 🗺️ **/map** | Regenerates `MAP.md` — visual sitemap of all notes. |
-| 🌱 **/evolve** | Watches your choices, updates `PREFERENCES.md`. |
-
-All seven read & write to `PREFERENCES.md` — that's the "memory" of how YOU like things organized.
+All agents read & write to `PREFERENCES.md` — that's how the system learns YOU.
 
 ---
 
@@ -55,20 +94,23 @@ All seven read & write to `PREFERENCES.md` — that's the "memory" of how YOU li
 
 ```bash
 # 1. In any Claude Code session inside this repo:
-> /notes capture "Today learned that few-shot beats zero-shot when output format matters"
+> /notes capture "few-shot beats zero-shot when output format matters"
+# ⚡ PIKACHU lands the Quick Note. Capture in inbox/ in 2 seconds.
 
-# Capture lands in inbox/, /sort routes it, /connect cross-links it, /map updates.
-# Three commands later you have a permanent, hierarchical, searchable note.
+# 2. After your study session:
+> /notes sort
+# 💪 MACHAMP routes everything from inbox to its proper folder.
 
-# 2. Quiz yourself a week later:
+# 3. The next morning:
 > /notes recall
+# 🥄 ALAKAZAM drills you on yesterday's notes (first-letter recall).
 
-# /recall drills you on what you've captured, surfaces what you've forgotten.
-
-# 3. See your knowledge graph:
-> /notes map
-# Opens MAP.md
+# 4. Sunday night:
+> /notes evolve
+# ⭐ EEVEE evolves the system based on your week's behavior.
 ```
+
+See [`COMBOS.md`](COMBOS.md) for the full set of multi-agent patterns ("wombo combos").
 
 ---
 
@@ -76,7 +118,9 @@ All seven read & write to `PREFERENCES.md` — that's the "memory" of how YOU li
 
 ```
 claudenotes/
-├── README.md              # This file
+├── README.md              # This file (Pokémon team + agent overview)
+├── CHANGELOG.md           # Version history
+├── COMBOS.md              # Multi-agent notetaking patterns (wombo combos)
 ├── PREFERENCES.md         # Learned rules — agents read & write here
 ├── MAP.md                 # Auto-generated sitemap (regenerate via /map)
 ├── MEMORIZE.md            # Pinned must-remember stuff
@@ -91,21 +135,21 @@ claudenotes/
 │   └── 06-prompt-patterns-3/
 ├── archive/               # Old/superseded notes (never deleted)
 └── skills/
-    ├── notes/SKILL.md     # Orchestrator (single entry point)
-    ├── capture/SKILL.md
-    ├── sort/SKILL.md
-    ├── connect/SKILL.md
-    ├── distill/SKILL.md
-    ├── recall/SKILL.md
-    ├── map/SKILL.md
-    └── evolve/SKILL.md
+    ├── notes/SKILL.md     # 🌸 MEW
+    ├── capture/SKILL.md   # ⚡ PIKACHU
+    ├── sort/SKILL.md      # 💪 MACHAMP
+    ├── connect/SKILL.md   # 🧲 MAGNETON
+    ├── distill/SKILL.md   # 😴 SNORLAX
+    ├── recall/SKILL.md    # 🥄 ALAKAZAM
+    ├── map/SKILL.md       # 🦅 PIDGEOT
+    └── evolve/SKILL.md    # ⭐ EEVEE
 ```
 
 ---
 
 ## 🌱 How "progressive learning" works
 
-Every time you reject an agent's suggestion, override its default, or invent a new convention, `/evolve` writes the lesson to `PREFERENCES.md`.
+Every time you reject an agent's suggestion, override its default, or invent a new convention, **EEVEE (`/evolve`)** writes the lesson to `PREFERENCES.md`.
 
 After 10 sessions, `PREFERENCES.md` knows:
 - You prefer bullet points over prose
@@ -129,6 +173,6 @@ That's the bet. That's why ClaudeNotes > Notion.
 
 ## 🎯 Status
 
-**v0.1 — Bootstrap.** All 8 agents scaffolded. First capture flow works end-to-end. Course (Vanderbilt) loaded as test workspace.
+**v0.2 — Pokémon Team Edition.** All 8 agents mapped to canon Gen 1 Pokémon. COMBOS.md added for multi-agent patterns. Vanderbilt course loaded as proving ground.
 
-📓⚡🃏
+🎮💎🃏
