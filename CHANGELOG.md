@@ -1,5 +1,20 @@
 # 📜 ClaudeNotes Changelog
 
+## v0.3 — 2026-04-16 — PITFALLS.md added
+
+### 💀 Added
+- **`PITFALLS.md`** — personal post-mortem log for "I did X, it backfired, here's what I learned" entries
+- Earned-file rule documented: `PLAYBOOK.md` only gets created after 3 recurring lessons appear in PITFALLS
+
+### 🚫 Skipped (intentionally)
+- `PLAYBOOK.md` — premature without lived patterns to draw from
+- `JOURNAL.md` — redundant with `/capture` inbox + `git log`
+
+### 🎯 Why only one new file
+Audited 3 proposed files against actual usage patterns. PITFALLS scored 9/10 fit (you already do post-mortems verbally — this just gives them a home). The other two scored low fit and high "empty file" risk. Skipped to avoid Notion-style file bloat.
+
+---
+
 ## v0.2 — 2026-04-16 — Pokémon Team Edition
 
 ### 🎮 Added

@@ -121,6 +121,7 @@ claudenotes/
 ├── README.md              # This file (Pokémon team + agent overview)
 ├── CHANGELOG.md           # Version history
 ├── COMBOS.md              # Multi-agent notetaking patterns (wombo combos)
+├── PITFALLS.md            # Personal post-mortems (mistakes + lessons)
 ├── PREFERENCES.md         # Learned rules — agents read & write here
 ├── MAP.md                 # Auto-generated sitemap (regenerate via /map)
 ├── MEMORIZE.md            # Pinned must-remember stuff
