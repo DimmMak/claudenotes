@@ -20,6 +20,26 @@ DIFFICULTY              ← S / A / B tier (frequency you'll use it)
 
 ## ⚡ S-TIER COMBOS (use weekly+)
 
+### 🎬 LIVE LECTURE (the new flagship)
+**Trigger:** About to watch a Vanderbilt lecture (or any browser-based video lecture).
+**Setup once:** Install `tampermonkey/cowatch-coursera.user.js` (see `tampermonkey/README.md`).
+**Sequence:**
+```
+1. 🟣 /cowatch — i'm watching, follow along
+   (DITTO confirms tab + Tampermonkey pipeline)
+2. cue throughout the lecture: "look" / "thoughts?" / "capture that" / "explain that"
+3. when lecture ends: "done"
+4. paste the suggested /capture commands DITTO gives you
+5. 💪 /sort                 (route everything)
+6. 🦅 /map                  (refresh sitemap)
+7. [next morning] 🥄 /recall (drill what stuck)
+```
+**Produces:** Lecture content captured at the perfect moments (not your guess), with timestamps, with proactive callouts to your existing notes — then sorted, mapped, drilled.
+**Difficulty:** S — replaces the old LECTURE-TO-MEMORY combo for any browser-watched lecture.
+
+---
+
+
 ### 🥇 LECTURE-TO-MEMORY
 **Trigger:** Just finished watching a Vanderbilt lecture.
 **Sequence:**

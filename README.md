@@ -22,7 +22,7 @@
 
 ---
 
-## 🎮 The Team — Your 8 Pokémon (Gen 1)
+## 🎮 The Team — Your 9 Pokémon (Gen 1)
 
 Each agent is canonically mapped to a Gen 1 Pokémon. Treat your repo like a battle team.
 
@@ -36,6 +36,7 @@ Each agent is canonically mapped to a Gen 1 Pokémon. Treat your repo like a bat
 ║  😴 SNORLAX    #143  /distill  — 460kg of compressed mass    ║
 ║  🧲 MAGNETON   #082  /connect  — 3 magnets fused as network  ║
 ║  💪 MACHAMP    #068  /sort     — 4 arms, 100 punches/2 sec   ║
+║  🟣 DITTO      #132  /cowatch  — transforms into any lecture ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
 
@@ -51,6 +52,7 @@ Each agent is canonically mapped to a Gen 1 Pokémon. Treat your repo like a bat
 | 6 | 🥄 **ALAKAZAM** #065 | `/recall` | Memory. IQ 5000, drills first-letter recall. |
 | 7 | 🦅 **PIDGEOT** #018 | `/map` | Scout. Flies at Mach 2, sees the whole map. |
 | 8 | ⭐ **EEVEE** #133 | `/evolve` | Adapter. Mutates based on environment (your usage). |
+| 9 | 🟣 **DITTO** #132 | `/cowatch` | Live study buddy. Transforms into whatever lecture is on screen. Reads transcripts via Tampermonkey, reacts to lecture content in real-time. |
 
 ### ⚔️ Battle priority (most-used first)
 
@@ -135,6 +137,9 @@ claudenotes/
 │   ├── 05-prompt-patterns-2/
 │   └── 06-prompt-patterns-3/
 ├── archive/               # Old/superseded notes (never deleted)
+├── tampermonkey/          # Browser scripts that feed live transcripts to /cowatch
+│   ├── README.md
+│   └── cowatch-coursera.user.js
 └── skills/
     ├── notes/SKILL.md     # 🌸 MEW
     ├── capture/SKILL.md   # ⚡ PIKACHU
@@ -143,7 +148,8 @@ claudenotes/
     ├── distill/SKILL.md   # 😴 SNORLAX
     ├── recall/SKILL.md    # 🥄 ALAKAZAM
     ├── map/SKILL.md       # 🦅 PIDGEOT
-    └── evolve/SKILL.md    # ⭐ EEVEE
+    ├── evolve/SKILL.md    # ⭐ EEVEE
+    └── cowatch/SKILL.md   # 🟣 DITTO (live study buddy)
 ```
 
 ---

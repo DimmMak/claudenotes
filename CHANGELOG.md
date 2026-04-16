@@ -1,5 +1,25 @@
 # 📜 ClaudeNotes Changelog
 
+## v0.4 — 2026-04-16 — Live co-watching mode (DITTO)
+
+### 🟣 Added
+- **9th teammate: `/cowatch` (DITTO #132)** — live study-buddy mode that follows lectures alongside the user, reacts in real-time, suggests timestamped captures
+- **`tampermonkey/cowatch-coursera.user.js`** — userscript that captures Coursera transcripts to localStorage every 3 seconds (clean text, no OCR needed)
+- **`tampermonkey/README.md`** — install instructions + storage schema docs
+- **New S-tier combo: LIVE LECTURE** — replaces the old LECTURE-TO-MEMORY for browser-watched lectures
+- Cue vocabulary: `look` / `thoughts?` / `capture that` / `explain that` / `quiz me` / `done`
+
+### 🔧 Architecture
+The Tampermonkey script writes transcripts + metadata to `localStorage` keys (`cowatch_transcript`, `cowatch_meta`). The `/cowatch` skill reads them via the Claude in Chrome browser MCP using `mcp__Claude_in_Chrome__javascript_tool`. Result: clean transcript text on demand, with current video timestamp + actively-spoken phrase, every time the user cues.
+
+### 💎 Why DITTO
+Ditto's defining trait is transforming into whatever Pokémon it sees. /cowatch's defining trait is reacting to whatever lecture is on screen. Same mechanic, different domain. Iconic Gen 1.
+
+### 🎯 Why this isn't a common .skill
+Combines four elements rarely seen together: (1) live browser tab observation, (2) personal knowledge graph integration, (3) cue-driven reactions, (4) context-aware capture suggestions. Closest commercial equivalents (Otter, Read.ai, Notion AI) cover at most two of the four.
+
+---
+
 ## v0.3 — 2026-04-16 — PITFALLS.md added
 
 ### 💀 Added
