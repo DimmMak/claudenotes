@@ -64,6 +64,16 @@
 
 ---
 
+## "Michelangelo doesn't hit the stone once, look at it, and throw the hammer down. He chisels." — Jules White, M1 Conversation (paraphrase)
+
+**Why it lands:** Single-image explanation of iterative refinement. If the world's greatest sculptor iterates, your prompt engineering should too.
+
+**Context:** Introducing the concept of conversation vs one-shot. Sets up the whole rest of the lecture.
+
+**Source:** Module 1, "Prompts are Conversations"
+
+---
+
 ## "We are content editors. We are editing the context of information and we have a budget." — Jules White, M1 Budget
 
 **Why it lands:** Reframes the user's role. You're not "typing prompts" — you're curating information under constraint. Editor, not typist.

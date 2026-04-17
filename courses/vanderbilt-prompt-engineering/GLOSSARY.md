@@ -88,6 +88,42 @@
 
 ---
 
+## Iterative Refinement (M1 Conversation)
+
+**Definition:** Shaping an LLM's output through a series of prompts rather than a single one. Each response informs the next prompt — you chisel toward the goal instead of trying to hit it in one shot.
+
+**Why it matters:** Most real tasks can't be solved by a perfect single prompt. Expecting one-shot success sets you up to quit too early. Iterative refinement is the difference between "LLMs aren't useful" and "LLMs are transformative."
+
+**First introduced:** Module 1, "Prompts are Conversations"
+
+**Cross-links:** [Conversation as Prompt](#conversation-as-prompt-m1-conversation), [Roadblock Navigation](#roadblock-navigation-m1-conversation)
+
+---
+
+## Conversation as Prompt (M1 Conversation)
+
+**Definition:** The insight that the ENTIRE chat history (all prior messages + responses) is what the LLM sees as context for generating the next response — not just your latest message. In practice, tools like ChatGPT concatenate the whole exchange into one big prompt.
+
+**Why it matters:** Frames every follow-up message as "adding to the prompt" rather than "sending a new one." Earlier messages still influence behavior. This is why you can build up complex context across turns.
+
+**First introduced:** Module 1, "Prompts are Conversations"
+
+**Cross-links:** [Iterative Refinement](#iterative-refinement-m1-conversation), [Context Window](#context-window-m1-budget)
+
+---
+
+## Roadblock Navigation (M1 Conversation)
+
+**Definition:** The technique of pivoting to a different task-representation when the LLM can't complete your original framing. Example: can't generate images → generate Graphviz text describing the diagram → same goal, different route.
+
+**Why it matters:** Most "LLM can't do that" moments are actually "LLM can't do that framing" moments. Reframing almost always opens a path. Treat dead ends as branching points in a tree, not terminations.
+
+**First introduced:** Module 1, "Prompts are Conversations"
+
+**Cross-links:** [Iterative Refinement](#iterative-refinement-m1-conversation)
+
+---
+
 ## Context Window (M1 Budget)
 
 **Definition:** The maximum amount of text (measured in tokens) an LLM can process in a single prompt. Exceeding it triggers a "too long" error or silent truncation.

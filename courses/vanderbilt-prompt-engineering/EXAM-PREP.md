@@ -252,6 +252,48 @@ Replace X with any entity that has a recognizable output shape (profession, pers
 
 ---
 
+## Q: What is the Michelangelo metaphor in prompt engineering?
+
+**A:** You don't hit the stone once and walk away if it's not a sculpture. A sculptor iterates — chipping, shaping, refining. Prompt engineering is the same: one-shot prompts rarely produce the ideal output. Multi-turn refinement is where the real power comes from.
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Iterative Refinement](GLOSSARY.md#iterative-refinement-m1-conversation), [Iterative Refinement Pattern](PATTERNS.md#iterative-refinement-pattern-m1-conversation)
+
+**Source:** Module 1, "Prompts are Conversations"
+
+**Common wrong answer:** "Use expensive models to get one-shot perfect answers" — misses the point. Even with perfect models, multi-turn refinement gives you MORE control.
+
+---
+
+## Q: You ask the LLM to generate a circuit diagram image, but image generation isn't available in your interface. What's the conversational move?
+
+**A:** Pivot to a different REPRESENTATION of the same goal. Ask the LLM to generate Graphviz text (or ASCII art, or a text description) that describes the same circuit. Same underlying information, different output shape. This is roadblock navigation — reframe the task, don't abandon it.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Roadblock Navigation](GLOSSARY.md#roadblock-navigation-m1-conversation), [Iterative Refinement Pattern](PATTERNS.md#iterative-refinement-pattern-m1-conversation)
+
+**Source:** Module 1, "Prompts are Conversations" (Robot Lab example)
+
+**Common wrong answer:** "Give up and use a different tool" — leaves capability on the table. Most "can't do that" moments are "can't do that framing" moments.
+
+---
+
+## Q: What does it mean that "the conversation IS the prompt"?
+
+**A:** Tools like ChatGPT concatenate every prior message + response into one big prompt that gets sent to the underlying LLM for each new turn. The model sees the whole history, not just your latest message. This is why earlier context still influences behavior many turns later.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Conversation as Prompt](GLOSSARY.md#conversation-as-prompt-m1-conversation)
+
+**Source:** Module 1, "Prompts are Conversations"
+
+**Common wrong answer:** "Each message is processed independently" — false. If that were true, 'from now on...' rules couldn't work.
+
+---
+
 ## Q: What are the 3 strategies for fitting oversize content into an LLM's prompt?
 
 **A:**

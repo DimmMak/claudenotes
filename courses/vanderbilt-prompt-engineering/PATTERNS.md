@@ -133,6 +133,45 @@ Prompt 3: Act as an employee affected by [decision].
 
 ---
 
+## Iterative Refinement Pattern (M1 Conversation)
+
+**Formula (conversational loop):**
+```
+1. Seed the conversation with your goal + initial context
+2. Read the response — identify what's missing / wrong / promising
+3. Feed the response back as leverage:
+   - follow-up question
+   - reframing of the task
+   - request for alternative representation
+   - explicit feedback ("that's wrong because ___, try X")
+4. If you hit a dead end → pivot to a different representation (same goal, different path)
+5. Repeat until goal reached
+```
+
+**What it does:** Replaces the "perfect one-shot prompt" mindset with a conversational chisel. Each turn shapes the output incrementally. Dead ends become branching points, not stops.
+
+**When to use it:** Every non-trivial task. If your first prompt didn't solve the whole thing, don't give up — iterate.
+
+**Roadblock navigation playbook:**
+- LLM can't do X → ask it to do a task adjacent to X (a diagram → Graphviz text; a 3D model → Python that generates an STL)
+- LLM gives vague output → ask follow-up with more specificity
+- LLM gives wrong output → explicitly correct and ask for retry
+- LLM over-explains → ask for just-the-next-step
+
+**Worked example:** See [Robot Lab Conversation](EXAMPLES.md#robot-lab-conversation-m1-conversation)
+
+**Common pitfalls:**
+- Quitting after the first weak response
+- Treating "I can't do that" as terminal instead of as a cue to reframe
+- Not giving explicit feedback on what's wrong (the model doesn't guess)
+- Trying to make one mega-prompt do everything instead of chiseling iteratively
+
+**Source:** Module 1, "Prompts are Conversations"
+
+**Cross-links:** [Iterative Refinement](GLOSSARY.md#iterative-refinement-m1-conversation), [Conversation as Prompt](GLOSSARY.md#conversation-as-prompt-m1-conversation), [Roadblock Navigation](GLOSSARY.md#roadblock-navigation-m1-conversation)
+
+---
+
 ## Targeted Summarization Pattern (M1 Budget)
 
 **Formula:**

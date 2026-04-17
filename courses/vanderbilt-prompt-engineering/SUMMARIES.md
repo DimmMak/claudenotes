@@ -32,6 +32,20 @@ If you know who or what you'd go to in the real world for an answer, the persona
 
 ---
 
+## Prompts as Conversations (M1 — Iterative Refinement Lecture)
+
+**What was covered:**
+Jules reframes prompting from "one-shot questions" to "ongoing conversations." Uses the Michelangelo metaphor — a sculptor doesn't hit the stone once and give up; he iteratively chisels. Extended worked example: an entire conversation designing a line-following robot, hitting multiple roadblocks (can't do 3D models via chat → pivot to G-code → doesn't work → pivot to Python generating STL files; can't generate images → pivot to Graphviz text-based diagrams). Demonstrates how to problem-solve AROUND dead ends by reframing the task in a different representation.
+
+**Main thesis:**
+The power of LLMs comes from CONVERSATION, not single-shot answers. When a prompt hits a dead end, you don't quit — you reframe, pivot, ask follow-ups, give feedback, and try alternative representations. Every response becomes fuel for the next prompt. The whole thread IS the prompt.
+
+**Time invested:** ~12 min
+
+**Source:** Module 1, "Prompts are a Tool for Repeated Use" / "Prompts are Conversations"
+
+---
+
 ## Prompt Size Limitations (M1 — Token Budget Lecture)
 
 **What was covered:**

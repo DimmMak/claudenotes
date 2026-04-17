@@ -234,6 +234,58 @@ Mary is in the movies.
 
 ---
 
+## Robot Lab Conversation (M1 Conversation)
+
+**Pattern demonstrated:** [Iterative Refinement Pattern](PATTERNS.md#iterative-refinement-pattern-m1-conversation)
+
+**Setup:** Jules designs a line-following robot through a multi-turn conversation. Hits 3 roadblocks, pivots each time, eventually gets printable STL code + a Graphviz circuit diagram + Arduino source code.
+
+**Conversation arc (abbreviated):**
+
+```
+You:   Help me explore a virtual lab for building robots. Introduce me.
+LLM:   Welcome to the virtual lab... here's what you can do.
+
+You:   Can we design a robot together?
+LLM:   Sure — define purpose, brainstorm, pick components, build, test.
+
+You:   Guide me through each step. I want to 3D print parts, have a circuit 
+       diagram, and run code on it.
+LLM:   Sure — step 1 is define purpose and function.
+
+You:   I want a line-following robot. What next?
+LLM:   Step 2: brainstorm using 3D models.
+
+You:   How do we do 3D models via chat? [roadblock]
+LLM:   Use Google Drive / Sketchpad...  [not useful]
+
+You:   [PIVOT #1] Show me sample G-code to 3D-print 4 wheels.
+LLM:   [generates G-code but it's not really valid]
+
+You:   [PIVOT #2] Generate Python code that creates an STL file for wheels.
+LLM:   [generates plausible STL-generation code] ✓
+
+You:   Pick electronics and show me how to wire them.
+LLM:   [tries to generate an image — broken]
+
+You:   [PIVOT #3] Use Graphviz syntax to describe the circuit diagram.
+LLM:   [generates working Graphviz input for a circuit diagram] ✓
+
+You:   Summarize everything we've covered.
+LLM:   [summary]
+
+You:   Quiz me on the electronics questions.
+LLM:   [quiz questions]
+```
+
+**Why it worked:** At every dead end, Jules reframed the task rather than giving up. Image generation fails → Graphviz. 3D model description fails → code that generates the model. Each pivot kept the GOAL constant while changing the REPRESENTATION.
+
+**Try it yourself:** Pick any multi-step task you couldn't solve in one prompt. Converse. Whenever you hit "can't do that," ask yourself: "what adjacent task with a different output shape would get me 80% there?"
+
+**Source:** Module 1, "Prompts are Conversations"
+
+---
+
 ## French Revolution — Prompt Too Long (M1 Budget)
 
 **Pattern demonstrated:** [Context Window](GLOSSARY.md#context-window-m1-budget) — the ANTI-EXAMPLE (what happens when you exceed it)
