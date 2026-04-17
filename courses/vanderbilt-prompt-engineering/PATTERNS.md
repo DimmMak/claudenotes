@@ -126,6 +126,36 @@ Prompt 3: Act as an employee affected by [decision].
 
 ---
 
+## Pattern Composition (M1 Paper)
+
+**Formula:** Combine 2+ named patterns within a single prompt to solve compound problems.
+
+```
+[Persona Pattern statements]
++
+[Few-Shot Examples]
++
+[Chain-of-Thought trigger]
+= compound prompt solving a multi-dimensional problem
+```
+
+**What it does:** Lets you stack pattern capabilities. One pattern gives role + vocabulary (Persona). Another gives format (Few-Shot). Another gives reasoning (CoT). Combined = richer output than any pattern alone.
+
+**When to use it:** When a single pattern doesn't fully solve your problem. Whenever you catch yourself wanting "X AND Y" behavior.
+
+**Worked example:** Not yet in course — the paper promises this will be shown. Likely in Module 5-6 (Prompt Patterns II/III).
+
+**Common pitfalls:**
+- Stacking patterns that contradict each other (e.g., "be concise" + "show full reasoning")
+- Loading too many patterns until the prompt becomes cluttered — quality over quantity
+- Forgetting pattern ORDER matters (Persona before task usually works better than after)
+
+**Source:** Module 1, "A Prompt Pattern Catalog" paper (abstract)
+
+**Cross-links:** [Pattern Composition (glossary)](GLOSSARY.md#pattern-composition-m1-paper), [Persona Pattern](#persona-pattern-m1-persona), [Helpful Assistant Pattern](#helpful-assistant-pattern-m1-reading)
+
+---
+
 ## Helpful Assistant Pattern (M1 Reading)
 
 **Formula (fundamental contextual statements):**

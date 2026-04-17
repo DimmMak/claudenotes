@@ -63,3 +63,23 @@
 **Source:** Module 1, Persona Pattern
 
 ---
+
+## "Prompts are also a form of programming." — Paper Abstract, M1 Paper
+
+**Why it lands:** Single sentence that reframes prompt engineering from "writing" to "coding" — matches the broader insight already in MEMORIZE.md that prompting IS programming.
+
+**Context:** Abstract, framing prompts as instructions that can customize LLM outputs and interactions.
+
+**Source:** Module 1, "A Prompt Pattern Catalog" paper (abstract)
+
+---
+
+## "Prompt patterns are a knowledge transfer method analogous to software patterns." — Paper Abstract, M1 Paper
+
+**Why it lands:** Establishes the paper's (and course's) core conceptual frame — prompt patterns aren't a novel invention, they're the AI-era parallel to GoF software patterns (Gamma, Helm, Johnson, Vlissides). That parallel IS the entire framework.
+
+**Context:** Defining why the paper presents patterns in catalog form rather than one-off tips.
+
+**Source:** Module 1, "A Prompt Pattern Catalog" paper (abstract)
+
+---

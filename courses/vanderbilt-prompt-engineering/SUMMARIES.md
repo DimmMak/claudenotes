@@ -32,6 +32,20 @@ If you know who or what you'd go to in the real world for an answer, the persona
 
 ---
 
+## Prompt Patterns Paper — Abstract (M1 — Academic Reading)
+
+**What was covered:**
+Abstract of the academic paper that underpins the course's pattern framework. Defines prompt engineering as a skill for conversing with LLMs, frames prompts as instructions + a form of programming, and draws an explicit analogy to software design patterns (reusable solutions to common problems in a particular context). Announces three paper contributions: (1) a framework for DOCUMENTING prompt patterns, (2) a CATALOG of tested patterns, (3) an explanation of how prompts can COMBINE multiple patterns.
+
+**Main thesis:**
+Prompt patterns are the AI-era equivalent of software patterns — reusable templates that encode proven solutions. The course's entire taxonomy (Persona, Few-Shot, CoT, etc.) fits inside this framework, and patterns can be composed together just like software components.
+
+**Time invested:** ~3 min (reading an abstract)
+
+**Source:** Module 1, "A Prompt Pattern Catalog to Enhance Prompt Engineering" paper (abstract)
+
+---
+
 ## Fundamental Contextual Statements (M1 — Reading)
 
 **What was covered:**

@@ -188,3 +188,48 @@
 **Common wrong answer:** "Because LLMs are flexible" — partial truth, but misses the architectural point. The SHARED patterns are what matter, not the model's tolerance for variation.
 
 ---
+
+## Q: What software-engineering concept are prompt patterns analogous to?
+
+**A:** Software design patterns (the "Gang of Four" tradition) — reusable solutions to common problems in a particular context. The paper explicitly frames prompt patterns as the AI-era parallel: catalog-style, composable, domain-adaptable.
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Prompt Pattern (formal definition)](GLOSSARY.md#prompt-pattern-formal-definition-m1-paper)
+
+**Source:** Module 1, "A Prompt Pattern Catalog" paper (abstract)
+
+**Common wrong answer:** "They're analogous to regex patterns" — wrong. Regex is for MATCHING text. Prompt patterns are for STRUCTURING behavior (which parallels how software design patterns structure code).
+
+---
+
+## Q: What are the three contributions claimed by the Prompt Pattern Catalog paper?
+
+**A:**
+1. A FRAMEWORK for documenting prompt patterns across domains.
+2. A CATALOG of tested patterns that improve LLM outputs.
+3. An explanation of how prompts can COMBINE multiple patterns.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Pattern Composition](PATTERNS.md#pattern-composition-m1-paper)
+
+**Source:** Module 1, "A Prompt Pattern Catalog" paper (abstract)
+
+**Common wrong answer:** Listing specific pattern names (Persona, Few-Shot, etc.) — those ARE the catalog, but the contribution is the META-framework, not the individual patterns inside it.
+
+---
+
+## Q: Why is "pattern composition" important in prompt engineering?
+
+**A:** Because single patterns solve single-dimensional problems. Real tasks often need multiple kinds of behavior (a specific role AND a specific format AND explicit reasoning) which requires stacking patterns together. Composition turns a small catalog into a combinatorial library.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Pattern Composition](PATTERNS.md#pattern-composition-m1-paper)
+
+**Source:** Module 1, "A Prompt Pattern Catalog" paper (abstract)
+
+**Common wrong answer:** "To make prompts longer" — length isn't the goal. Compound CAPABILITY is.
+
+---

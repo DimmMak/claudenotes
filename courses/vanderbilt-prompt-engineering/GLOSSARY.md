@@ -88,6 +88,30 @@
 
 ---
 
+## Prompt Pattern (formal definition) (M1 Paper)
+
+**Definition:** A reusable solution to a common problem faced when conversing with LLMs — structured analogously to software design patterns. Documents a specific way to structure a prompt so that it solves a particular class of problem (output generation, interaction control, etc.).
+
+**Why it matters:** Formalizes prompt engineering as a reusable knowledge-transfer method, not one-off wordsmithing. Once you know the pattern, you can apply it to any domain that fits.
+
+**First introduced:** Module 1, "A Prompt Pattern Catalog" paper (abstract)
+
+**Cross-links:** [Fundamental Contextual Statements](#fundamental-contextual-statements-m1-reading), [Pattern Composition](PATTERNS.md#pattern-composition-m1-paper)
+
+---
+
+## Pattern Composition (M1 Paper)
+
+**Definition:** Combining multiple prompt patterns within a single prompt to solve compound problems. Patterns are modular building blocks — some work better together than alone.
+
+**Why it matters:** The course isn't just 19 isolated patterns — the real power is stacking them (Persona + Few-Shot + CoT). The paper calls out this compositional design as a core contribution.
+
+**First introduced:** Module 1, "A Prompt Pattern Catalog" paper (abstract)
+
+**Cross-links:** [Pattern Composition (pattern)](PATTERNS.md#pattern-composition-m1-paper)
+
+---
+
 ## Helpful Assistant Pattern (M1 Reading)
 
 **Definition:** A named prompt pattern designed to keep an AI assistant helpful, responsive, and non-hostile. Documents the behavior via 3 fundamental contextual statements.
