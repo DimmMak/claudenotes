@@ -73,3 +73,118 @@
 **Common wrong answer:** "The LLM can't follow structure without explicit instructions" — it often follows implicit structure just from showing the shape.
 
 ---
+
+## Q: What is the Persona Pattern formula?
+
+**A:** `Act as [persona], provide outputs that that persona would provide.` The `[persona]` slot can be a role (accountant), a perspective (skeptic), a character (Mary's lamb), or an inanimate system (Linux terminal).
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)
+
+**Source:** Module 1, Persona Pattern
+
+**Common wrong answer:** "Pretend you are X" — close, but the course emphasizes "act as" specifically, and the second clause (what output the persona would produce) is what locks the pattern in.
+
+---
+
+## Q: Why is the persona pattern called "information-dense"?
+
+**A:** A 2-3 word persona invocation replaces paragraphs of description — vocabulary, tone, knowledge base, and output format are all implied. Describing each dimension individually would consume valuable prompt space that could hold new information instead.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)
+
+**Source:** Module 1, Persona Pattern
+
+**Common wrong answer:** "Because the persona has lots of training data" — partly true, but the density claim is about the PROMPT being short, not the data being large.
+
+---
+
+## Q: How does the "nine-year-old skeptic" example prove a persona changes more than just tone?
+
+**A:** The nine-year-old response references movies and commonsense doubts, not research papers or technical arguments. Same stance (skeptical) — different knowledge ceiling and reasoning style. The persona shapes BOTH tone AND the knowledge base the model draws from.
+
+**Difficulty:** Hard
+
+**Tests knowledge of:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)
+
+**Source:** Module 1, Persona Pattern
+
+**Common wrong answer:** "It proves the persona just adds slang or simpler words" — misses the shift in knowledge base and argument style.
+
+---
+
+## Q: What is a Virtual Panel and when would you use it?
+
+**A:** Several persona prompts run in parallel, each analyzing the same decision from a different expert viewpoint (security expert, CFO, employee). Use it for high-stakes decisions where single-perspective analysis is risky — the personas surface blind spots each other miss.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Virtual Panel Pattern](PATTERNS.md#virtual-panel-pattern-m1-persona), [Virtual Panel](GLOSSARY.md#virtual-panel-m1-persona)
+
+**Source:** Module 1, Persona Pattern (closing section)
+
+**Common wrong answer:** "Ask ChatGPT to consider multiple viewpoints in one prompt" — weaker. Separating personas into distinct prompts gives each one its own full context budget.
+
+---
+
+## Q: Why can "act as the Linux terminal for a computer that has been hacked" produce coherent terminal output?
+
+**A:** Persona patterns aren't limited to human roles. Any system with a distinctive output shape that appears densely in training data — a terminal, an API response, a log file — can be invoked as a persona. The LLM has seen enough of the format to reproduce it plausibly.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)
+
+**Source:** Module 1, Persona Pattern
+
+**Common wrong answer:** "Because the LLM can actually execute terminal commands" — it can't. It reproduces the shape from training data.
+
+---
+
+## Q: What are fundamental contextual statements?
+
+**A:** The minimal set of written descriptions that communicate the essential ideas behind a prompt pattern. They define the pattern's ESSENCE, independent of any specific wording. Two prompts with different phrasing can implement the same pattern if they convey the same fundamental statements.
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Fundamental Contextual Statements](GLOSSARY.md#fundamental-contextual-statements-m1-reading)
+
+**Source:** Module 1, "Prompt Patterns" reading
+
+**Common wrong answer:** "The exact wording of a prompt" — wrong. The wording can vary; the statements themselves are what define the pattern.
+
+---
+
+## Q: Name the 3 fundamental contextual statements of the Helpful Assistant Pattern.
+
+**A:**
+1. You are a helpful AI assistant.
+2. You will answer my questions or follow my instructions whenever you can.
+3. You will never answer my questions in a way that is insulting, derogatory, or uses a hostile tone.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Helpful Assistant Pattern](PATTERNS.md#helpful-assistant-pattern-m1-reading)
+
+**Source:** Module 1, "Prompt Patterns" reading
+
+**Common wrong answer:** Omitting the "never hostile" statement and only including helpfulness. The non-hostile clause is load-bearing — it prevents the assistant from refusing in a snarky way.
+
+---
+
+## Q: Why can two prompts with different wordings implement the same pattern?
+
+**A:** Because a pattern is defined by its fundamental contextual statements (essential ideas), not by exact wording. As long as both prompts convey the same underlying statements, they produce the same behavior. This separation makes patterns reusable, teachable, and language-independent.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Fundamental Contextual Statements](GLOSSARY.md#fundamental-contextual-statements-m1-reading), [Helpful Assistant Pattern](PATTERNS.md#helpful-assistant-pattern-m1-reading)
+
+**Source:** Module 1, "Prompt Patterns" reading
+
+**Common wrong answer:** "Because LLMs are flexible" — partial truth, but misses the architectural point. The SHARED patterns are what matter, not the model's tolerance for variation.
+
+---

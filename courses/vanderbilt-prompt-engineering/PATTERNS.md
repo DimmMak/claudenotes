@@ -82,3 +82,72 @@ Summary: [blank]
 **Cross-links:** [Template Pattern](#template-pattern) (later in course, formal version)
 
 ---
+
+## Persona Pattern (M1 Persona)
+
+**Formula:** `Act as [persona], provide outputs that that persona would provide`
+
+**What it does:** Replaces the LLM's default "helpful assistant" framing with a specific role. Unlocks the persona's vocabulary, tone, knowledge base, and typical output format — all from a 2-3 word invocation.
+
+**When to use it:** When you know who/what you'd go to in the real world for an answer but don't want to spell out their format or vocabulary. Also useful when you need a specific point of view (skeptical, optimistic, domain-expert).
+
+**Worked example:** See [Skeptic Computer Scientist](EXAMPLES.md#skeptic-computer-scientist-m1-persona)
+
+**Common pitfalls:** Naming a persona the LLM has thin training data on (obscure role, niche character) degrades output. Also: persona can override some safety guardrails — in the hacked-Linux-terminal demo the model initially refused, then complied once framed as "act as."
+
+**Source:** Module 1, Persona Pattern
+
+**Cross-links:** [Virtual Panel Pattern](#virtual-panel-pattern-m1-persona), [Persona](GLOSSARY.md#persona-m1-persona), [Specificity Injection](#specificity-injection-m1-intuition) (stacking specificity onto persona — "skeptic well-versed in computer science")
+
+---
+
+## Virtual Panel Pattern (M1 Persona)
+
+**Formula:** Run the same question through N separate persona prompts, each adopting a distinct expert role. Combine outputs.
+
+**Example syntax:**
+```
+Prompt 1: Act as a security expert. Analyze [decision].
+Prompt 2: Act as a CFO. Analyze [decision].
+Prompt 3: Act as an employee affected by [decision].
+```
+
+**What it does:** Surfaces blind spots — each persona catches issues the others miss. Approximates a committee of advisors without assembling one.
+
+**When to use it:** High-stakes decisions where single-perspective analysis is risky — strategy docs, security reviews, launch plans, hiring decisions.
+
+**Worked example:** Not directly demoed in this lecture — Jules describes the pattern at the close. Try it by running any real decision through 3+ relevant personas.
+
+**Common pitfalls:** Overlapping personas produce redundant output. Pick personas that would genuinely disagree (security vs speed vs cost) rather than three flavors of the same role.
+
+**Source:** Module 1, Persona Pattern (closing section)
+
+**Cross-links:** [Persona Pattern](#persona-pattern-m1-persona), [Virtual Panel](GLOSSARY.md#virtual-panel-m1-persona)
+
+---
+
+## Helpful Assistant Pattern (M1 Reading)
+
+**Formula (fundamental contextual statements):**
+```
+1. You are a helpful AI assistant.
+2. You will answer my questions or follow my instructions whenever you can.
+3. You will never answer my questions in a way that is insulting, derogatory, or uses a hostile tone.
+```
+
+**What it does:** Anchors the LLM's default behavior toward helpfulness while blocking hostile/derogatory output. Prevents the model from refusing in unhelpful ways or snapping back with attitude.
+
+**When to use it:** As a baseline system prompt for any customer-facing AI assistant, chatbot, or productivity tool. Combine with more specific patterns (Persona, etc.) for richer behavior.
+
+**Worked examples:** See [Skilled AI Assistant Wording](EXAMPLES.md#skilled-ai-assistant-wording-m1-reading) and [ChatAmazing Wording](EXAMPLES.md#chatamazing-wording-m1-reading)
+
+**Common pitfalls:**
+- Relying only on helpful-tone statements without also specifying what the assistant should NOT do — the "never insulting" clause is load-bearing
+- Forgetting that this is a BASELINE pattern — it gets stacked with task-specific patterns, not used alone
+- Treating wording as fixed — the 3 fundamental statements are what matter, not the exact phrasing
+
+**Source:** Module 1, "Prompt Patterns" reading
+
+**Cross-links:** [Fundamental Contextual Statements](GLOSSARY.md#fundamental-contextual-statements-m1-reading), [Persona Pattern](#persona-pattern-m1-persona)
+
+---
