@@ -64,6 +64,16 @@
 
 ---
 
+## "We are content editors. We are editing the context of information and we have a budget." — Jules White, M1 Budget
+
+**Why it lands:** Reframes the user's role. You're not "typing prompts" — you're curating information under constraint. Editor, not typist.
+
+**Context:** Explaining why we can't just dump all info into a prompt, after the French Revolution article triggered a "too long" error.
+
+**Source:** Module 1, "Prompt Size Limitations"
+
+---
+
 ## "Anytime we want to go and introduce new information to the large language model that it didn't have access to when it was trained, all we have to do is put it into the prompt." — Jules White, M1 Context
 
 **Why it lands:** The simplest possible statement of context injection. No retraining, no fine-tuning, no APIs — just put it in the prompt.

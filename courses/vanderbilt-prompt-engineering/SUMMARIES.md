@@ -32,6 +32,20 @@ If you know who or what you'd go to in the real world for an answer, the persona
 
 ---
 
+## Prompt Size Limitations (M1 — Token Budget Lecture)
+
+**What was covered:**
+Jules demonstrates that every LLM has a finite context window by pasting a full French Revolution Wikipedia article into ChatGPT and hitting the "too long" error. Introduces the content-editor mindset — the user must fit information into a word/token budget like a writer fitting into a page limit. Presents 3 strategies for working around the limit: (1) QUERY (select relevant subset), (2) FILTER (remove extraneous), (3) SUMMARIZE (compress while preserving key info). Key twist: TARGETED summarization preserves specific aspects ("summarize in one sentence preserving information about numbers of people") while generic summarization loses them.
+
+**Main thesis:**
+Context injection isn't unlimited. You can't dump everything into the prompt. The user's job is to CURATE context — select, filter, compress — so the LLM gets what it needs without overflow. Targeted summarization (compression with a preservation goal) is the most powerful technique because you control what survives the compression.
+
+**Time invested:** ~10 min
+
+**Source:** Module 1, "Prompt Size Limitations"
+
+---
+
 ## Introducing New Information (M1 — Context Injection Lecture)
 
 **What was covered:**

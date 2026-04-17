@@ -88,6 +88,42 @@
 
 ---
 
+## Context Window (M1 Budget)
+
+**Definition:** The maximum amount of text (measured in tokens) an LLM can process in a single prompt. Exceeding it triggers a "too long" error or silent truncation.
+
+**Why it matters:** The fundamental constraint every prompt engineer works within. Context injection is powerful — but it's bounded. Every strategy for long-content tasks (query/filter/summarize, RAG, chunking) exists because of this limit.
+
+**First introduced:** Module 1, "Prompt Size Limitations"
+
+**Cross-links:** [Token Budget](#token-budget-m1-budget), [Targeted Summarization Pattern](PATTERNS.md#targeted-summarization-pattern-m1-budget)
+
+---
+
+## Token Budget (M1 Budget)
+
+**Definition:** The prompt engineer's mental model for context window — you have a fixed "budget" of tokens to spend on context, instructions, and expected output. Over-spending forces cuts.
+
+**Why it matters:** Reframes prompt design as editing-under-constraint, not dumping. You're a content editor with a word limit — every sentence has to justify its cost.
+
+**First introduced:** Module 1, "Prompt Size Limitations"
+
+**Cross-links:** [Context Window](#context-window-m1-budget), [Targeted Summarization Pattern](PATTERNS.md#targeted-summarization-pattern-m1-budget)
+
+---
+
+## Targeted Summarization (M1 Budget)
+
+**Definition:** Asking the LLM to compress content while preserving specific aspects ("summarize in one sentence preserving information about numbers of people"). Differs from generic summarization, which optimizes for overall readability and may drop details you need.
+
+**Why it matters:** Generic summaries lose the facts you care about. Targeted summarization lets you specify the preservation goal so the compression serves your downstream reasoning.
+
+**First introduced:** Module 1, "Prompt Size Limitations"
+
+**Cross-links:** [Targeted Summarization Pattern](PATTERNS.md#targeted-summarization-pattern-m1-budget), [Token Budget](#token-budget-m1-budget)
+
+---
+
 ## Context Injection (M1 Context)
 
 **Definition:** Placing information the LLM wasn't trained on directly into the prompt so the model can reason about it. Covers both DATA (numbers, documents, private files) and HIDDEN ASSUMPTIONS (unusual rules, organizational context).

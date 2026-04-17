@@ -133,6 +133,35 @@ Prompt 3: Act as an employee affected by [decision].
 
 ---
 
+## Targeted Summarization Pattern (M1 Budget)
+
+**Formula:**
+```
+Summarize [INPUT] in [LENGTH CONSTRAINT], preserving information about [ASPECT TO PRESERVE].
+```
+
+**What it does:** Compresses long content while explicitly keeping the details you need for downstream reasoning. Removes the randomness of generic summarization (which may drop facts you care about).
+
+**When to use it:** Whenever you need to fit source material into a prompt budget but know what you'll later reason about. Compression serves your next question.
+
+**3-strategy framework for oversize content:**
+1. **QUERY** — pull only the relevant subset
+2. **FILTER** — remove clearly irrelevant parts
+3. **SUMMARIZE** — targeted compression as described above
+
+**Worked example:** See [French Revolution — Targeted vs Generic Summary](EXAMPLES.md#french-revolution--targeted-vs-generic-summary-m1-budget)
+
+**Common pitfalls:**
+- Generic summarize without preservation goal → loses the facts you need
+- Preservation goal too broad ("preserve all numbers") → compression barely helps
+- Compressing before knowing what you'll ask → double work when the question shifts
+
+**Source:** Module 1, "Prompt Size Limitations"
+
+**Cross-links:** [Targeted Summarization (glossary)](GLOSSARY.md#targeted-summarization-m1-budget), [Context Window](GLOSSARY.md#context-window-m1-budget), [Context Injection Pattern](#context-injection-pattern-m1-context)
+
+---
+
 ## Context Injection Pattern (M1 Context)
 
 **Formula:**

@@ -252,6 +252,51 @@ Replace X with any entity that has a recognizable output shape (profession, pers
 
 ---
 
+## Q: What are the 3 strategies for fitting oversize content into an LLM's prompt?
+
+**A:**
+1. **QUERY** — select only the relevant subset of the content
+2. **FILTER** — remove clearly extraneous parts before sending
+3. **SUMMARIZE** — compress (ideally targeted summarization that preserves what you need)
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Targeted Summarization Pattern](PATTERNS.md#targeted-summarization-pattern-m1-budget), [Context Window](GLOSSARY.md#context-window-m1-budget)
+
+**Source:** Module 1, "Prompt Size Limitations"
+
+**Common wrong answer:** "Just use a bigger model" — possible but expensive and not always available. Even with a million-token window, you still hit the limit eventually on real-world corpora.
+
+---
+
+## Q: What's the difference between generic summarization and targeted summarization?
+
+**A:** Generic summarization uses the model's default heuristics — optimize for overall readability, which often drops specific details (numbers, names, dates). Targeted summarization includes a preservation goal ("preserving information about numbers of people") so the compression survives WITH the facts you'll later reason about.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Targeted Summarization](GLOSSARY.md#targeted-summarization-m1-budget), [Targeted Summarization Pattern](PATTERNS.md#targeted-summarization-pattern-m1-budget)
+
+**Source:** Module 1, "Prompt Size Limitations"
+
+**Common wrong answer:** "Targeted summaries are shorter" — not necessarily. The difference is WHAT is kept, not LENGTH.
+
+---
+
+## Q: Jules compares prompt engineering to editing a paper with a page limit. What's the analogy?
+
+**A:** The LLM's context window is a fixed budget of tokens/words, just like a journal article has a fixed page count. You can't dump everything in; you must select and curate. The user is a CONTENT EDITOR choosing what makes it into the prompt under constraint.
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Token Budget](GLOSSARY.md#token-budget-m1-budget)
+
+**Source:** Module 1, "Prompt Size Limitations"
+
+**Common wrong answer:** "The analogy is about writing style" — no, it's specifically about LIMITATION. The editor role is about cutting, not polishing.
+
+---
+
 ## Q: How do you make an LLM reason about data it wasn't trained on?
 
 **A:** Inject the data directly into the prompt — put the new information (documents, numbers, private facts) at the top, then ask your question below it. No retraining or fine-tuning needed; the LLM reads the context alongside your question and reasons on both together.

@@ -234,6 +234,58 @@ Mary is in the movies.
 
 ---
 
+## French Revolution — Prompt Too Long (M1 Budget)
+
+**Pattern demonstrated:** [Context Window](GLOSSARY.md#context-window-m1-budget) — the ANTI-EXAMPLE (what happens when you exceed it)
+
+**Setup:** Dump the entire Wikipedia article for the French Revolution into ChatGPT. Watch the model refuse on size grounds.
+
+**Input:**
+```
+[entire French Revolution Wikipedia article — tens of thousands of words]
+```
+
+**Output:**
+```
+The message you submitted was too long. Please reload the conversation and submit something shorter.
+```
+
+**Why it failed:** Exceeded the model's context window. The LLM can't read more than its token limit per turn. More capable models have larger windows, but none are unlimited.
+
+**Try it yourself:** Paste any huge document. Any model will eventually refuse. Use this to find your model's practical ceiling.
+
+**Source:** Module 1, "Prompt Size Limitations"
+
+---
+
+## French Revolution — Targeted vs Generic Summary (M1 Budget)
+
+**Pattern demonstrated:** [Targeted Summarization Pattern](PATTERNS.md#targeted-summarization-pattern-m1-budget)
+
+**Setup:** Same source content, two different compression goals. Shows that WHAT you ask to preserve changes what survives.
+
+**Input (generic summary):**
+```
+Summarize this information in one sentence.
+[French Revolution content block]
+```
+**Output:** A high-level one-liner about "popular uprising against the monarchy" — DROPS the population/count numbers.
+
+**Input (targeted summary):**
+```
+Summarize this information in one sentence, preserving information about numbers of people.
+[French Revolution content block]
+```
+**Output:** One-liner that KEEPS the counts — "The population of 30 million faced a resistance of 300,000..." (illustrative).
+
+**Why it worked:** The preservation goal explicitly tells the model what MUST survive the compression. Without it, the model uses its default summary heuristics (drop numbers, keep themes).
+
+**Try it yourself:** Take any document. Run a generic summary, then a targeted summary with a specific preservation goal. Compare what details survived each version.
+
+**Source:** Module 1, "Prompt Size Limitations"
+
+---
+
 ## Birds Without Data (M1 Context)
 
 **Pattern demonstrated:** [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context) — the ANTI-EXAMPLE (what happens without it)
