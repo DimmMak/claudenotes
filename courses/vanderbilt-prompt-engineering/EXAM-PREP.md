@@ -233,3 +233,35 @@
 **Common wrong answer:** "To make prompts longer" — length isn't the goal. Compound CAPABILITY is.
 
 ---
+
+## Q: What are the 2 fundamental contextual statements of the Persona Pattern (formal version)?
+
+**A:**
+1. Act as Persona X
+2. Perform task Y
+
+Replace X with any entity that has a recognizable output shape (profession, perspective, system, character). Replace Y with the specific task.
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)
+
+**Source:** Module 1, Paper: Persona Pattern formal section
+
+**Common wrong answer:** Listing more than 2 statements (e.g., "Add specificity," "Use formal tone"). The paper's formal version is exactly 2 statements; additional specificity is STACKING other patterns, not part of the base Persona Pattern.
+
+---
+
+## Q: The same task "evaluate what I'm eating" produces totally different output from a nutritionist vs a gourmet chef persona. Why?
+
+**A:** Because the persona, not the task, dominates output shape. The nutritionist persona loads health-optimization vocabulary and framing; the gourmet chef persona loads culinary aesthetic and technique-critique framing. Same input, orthogonal analyses.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)
+
+**Source:** Module 1, Paper: Persona Pattern examples
+
+**Common wrong answer:** "The task is ambiguous" — no, the task is identical. What differs is the PERSONA, which is the point.
+
+---

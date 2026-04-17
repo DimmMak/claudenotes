@@ -83,9 +83,16 @@ Summary: [blank]
 
 ---
 
-## Persona Pattern (M1 Persona)
+## Persona Pattern (M1 Persona + M1 Paper)
 
-**Formula:** `Act as [persona], provide outputs that that persona would provide`
+**Formula (fundamental contextual statements):**
+```
+1. Act as Persona X
+2. Perform task Y
+```
+Replace X with persona name (profession, perspective, system, character). Replace Y with the task you want performed.
+
+**Alternative wording:** `Act as [persona], provide outputs that that persona would provide`
 
 **What it does:** Replaces the LLM's default "helpful assistant" framing with a specific role. Unlocks the persona's vocabulary, tone, knowledge base, and typical output format — all from a 2-3 word invocation.
 

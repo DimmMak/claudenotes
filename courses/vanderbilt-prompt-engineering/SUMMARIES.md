@@ -32,6 +32,20 @@ If you know who or what you'd go to in the real world for an answer, the persona
 
 ---
 
+## Persona Pattern — Formal Documentation (M1 — Paper Reading)
+
+**What was covered:**
+The academic paper's formal documentation of the Persona Pattern using the 2-statement fundamental contextual statement framework: (1) Act as Persona X, (2) Perform task Y. Provides five applied examples spanning human roles (speech-language pathologist, nutritionist, gourmet chef), inanimate systems (hacked Linux terminal), and characters (Mary's lamb) — demonstrating the pattern's range.
+
+**Main thesis:**
+Persona Pattern is the simplest and most composable pattern in the catalog — TWO statements cover every case. The persona slot accepts any entity with a recognizable output shape: profession, perspective, system, character. Everything else (vocabulary, tone, format) is implied by the persona itself.
+
+**Time invested:** ~3 min (short reading)
+
+**Source:** Module 1, Paper: Persona Pattern formal section
+
+---
+
 ## Prompt Patterns Paper — Abstract (M1 — Academic Reading)
 
 **What was covered:**

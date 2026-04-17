@@ -234,6 +234,48 @@ Mary is in the movies.
 
 ---
 
+## Nutritionist (M1 Paper)
+
+**Pattern demonstrated:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)
+
+**Setup:** Canonical "give me feedback" persona. Paper uses nutritionist alongside gourmet chef to show how SAME TASK (evaluating food choices) produces RADICALLY different output depending on persona.
+
+**Input:**
+```
+Act as a nutritionist, I am going to tell you what I am eating and you will tell me about my eating choices.
+```
+
+**Output (shape):** Health-focused analysis — macronutrients, calories, deficiencies, dietary balance, recommendations grounded in nutrition science.
+
+**Why it worked:** The nutritionist persona loads clinical vocabulary + evaluative framing + health-optimization mindset. The user doesn't need to specify any of that.
+
+**Try it yourself:** Feed it the same meal description through [nutritionist] vs [gourmet chef] — compare side by side. The SAME INPUT produces non-overlapping analyses.
+
+**Source:** Module 1, Paper: Persona Pattern examples
+
+---
+
+## Gourmet Chef (M1 Paper)
+
+**Pattern demonstrated:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)
+
+**Setup:** Parallel to nutritionist — same task (evaluate food), different persona (culinary expert). Illustrates how the persona dimension dominates the output even with identical task wording.
+
+**Input:**
+```
+Act as a gourmet chef, I am going to tell you what I am eating and you will tell me about my eating choices.
+```
+
+**Output (shape):** Culinary-focused commentary — flavor pairings, technique critique, ingredient quality, creative alternatives, aesthetic presentation notes.
+
+**Why it worked:** The gourmet chef persona loads culinary vocabulary + aesthetic framing + technique-evaluation mindset. Zero overlap with nutritionist's health-optimization framing.
+
+**Try it yourself:** Pair with the nutritionist prompt above. Run identical input through both. You now have a side-by-side demonstration that persona > task when shaping output.
+
+**Source:** Module 1, Paper: Persona Pattern examples
+
+---
+
 ## Skilled AI Assistant Wording (M1 Reading)
 
 **Pattern demonstrated:** [Helpful Assistant Pattern](PATTERNS.md#helpful-assistant-pattern-m1-reading)
