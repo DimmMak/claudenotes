@@ -64,6 +64,16 @@
 
 ---
 
+## "Anytime we want to go and introduce new information to the large language model that it didn't have access to when it was trained, all we have to do is put it into the prompt." — Jules White, M1 Context
+
+**Why it lands:** The simplest possible statement of context injection. No retraining, no fine-tuning, no APIs — just put it in the prompt.
+
+**Context:** Opening the birds-outside-my-house example, before injecting the historical data.
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+---
+
 ## "Prompts are also a form of programming." — Paper Abstract, M1 Paper
 
 **Why it lands:** Single sentence that reframes prompt engineering from "writing" to "coding" — matches the broader insight already in MEMORIZE.md that prompting IS programming.

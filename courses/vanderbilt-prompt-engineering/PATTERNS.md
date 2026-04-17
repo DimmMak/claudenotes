@@ -133,6 +133,39 @@ Prompt 3: Act as an employee affected by [decision].
 
 ---
 
+## Context Injection Pattern (M1 Context)
+
+**Formula:**
+```
+[CONTEXT / DATA / HIDDEN ASSUMPTIONS the model didn't know]
+[YOUR QUESTION or instruction]
+```
+
+Put the new information at the TOP of the prompt. Then ask your question or give your instruction.
+
+**What it does:** Lets the LLM reason about data it was never trained on — private documents, post-cutoff events, domain-specific rules, non-default assumptions. Without this pattern, the model either refuses or hallucinates.
+
+**When to use it:** Any time you're reasoning about something outside the LLM's training set: private company docs, recent news, personal data, unusual business rules, custom constraints.
+
+**Checklist before asking your question:**
+- [ ] Did I include the raw DATA (numbers, documents, facts)?
+- [ ] Did I include HIDDEN ASSUMPTIONS (non-default rules)?
+- [ ] Did I give ENOUGH context to reason, not just partial info?
+- [ ] Is my question AFTER the context, not buried inside it?
+
+**Worked examples:** See [Birds Without Data](EXAMPLES.md#birds-without-data-m1-context), [Birds With Historical Data](EXAMPLES.md#birds-with-historical-data-m1-context), [Birds in the Glass Dome](EXAMPLES.md#birds-in-the-glass-dome-m1-context)
+
+**Common pitfalls:**
+- Providing data but skipping the hidden rules (model uses real-world defaults instead)
+- Stuffing context AFTER the question (less reliable than context-first)
+- Sending sensitive/private data to a remote LLM without confirming data-handling policies
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+**Cross-links:** [Context Injection (glossary)](GLOSSARY.md#context-injection-m1-context), [Hidden Assumptions](GLOSSARY.md#hidden-assumptions-m1-context), [RAG](GLOSSARY.md#rag-m1-context)
+
+---
+
 ## Pattern Composition (M1 Paper)
 
 **Formula:** Combine 2+ named patterns within a single prompt to solve compound problems.

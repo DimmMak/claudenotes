@@ -32,6 +32,20 @@ If you know who or what you'd go to in the real world for an answer, the persona
 
 ---
 
+## Introducing New Information (M1 — Context Injection Lecture)
+
+**What was covered:**
+Jules demonstrates how to reason about content the LLM wasn't trained on by injecting the information directly into the prompt. Uses the "birds outside my house" example three times — (1) no data → LLM refuses, (2) historical monthly data → LLM answers 210 for March, (3) data + hidden rule ("house is covered by a glass dome, animals live forever") → LLM correctly follows the injected rule to answer 120. Previews RAG (retrieval-augmented generation) as the future pattern for most LLM applications.
+
+**Main thesis:**
+Any fact the model needs to reason must live in the prompt — not only DATA (numbers, documents, private info) but also HIDDEN ASSUMPTIONS (unusual rules, organizational context, constraints). If the info isn't in the prompt, the LLM can't use it. This principle underlies every search + chat application going forward.
+
+**Time invested:** ~12 min
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+---
+
 ## Persona Pattern — Formal Documentation (M1 — Paper Reading)
 
 **What was covered:**

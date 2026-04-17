@@ -252,6 +252,62 @@ Replace X with any entity that has a recognizable output shape (profession, pers
 
 ---
 
+## Q: How do you make an LLM reason about data it wasn't trained on?
+
+**A:** Inject the data directly into the prompt — put the new information (documents, numbers, private facts) at the top, then ask your question below it. No retraining or fine-tuning needed; the LLM reads the context alongside your question and reasons on both together.
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Context Injection](GLOSSARY.md#context-injection-m1-context), [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context)
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+**Common wrong answer:** "Fine-tune the model on your data" — possible but expensive and slow. Context injection gives 90% of the value for 0% of the work.
+
+---
+
+## Q: Why did adding historical bird data change the LLM's ability to answer "how many birds are outside my house"?
+
+**A:** Without data, the model correctly refused because it couldn't reason without inputs. With the monthly data in the prompt, the model had exactly what it needed to estimate the answer for March (210). Same question → different output, entirely because of context availability.
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context)
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+**Common wrong answer:** "Because the model learned from the data" — wrong. The model doesn't LEARN from prompt content; it just has it available to reason over during generation. No memory persists.
+
+---
+
+## Q: What are "hidden assumptions" and why must they be injected into the prompt?
+
+**A:** Unusual rules or non-default conditions the model can't guess (e.g., "animals live forever inside this glass dome"). The LLM defaults to real-world priors; if your scenario deviates, you MUST state the deviation explicitly. Without it, the model applies normal-world assumptions and reasons to the wrong answer.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Hidden Assumptions](GLOSSARY.md#hidden-assumptions-m1-context), [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context)
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+**Common wrong answer:** "Models can infer hidden rules from context" — unreliable. They'll apply training-data defaults unless told otherwise.
+
+---
+
+## Q: What production architecture is Jules describing when he talks about "search engines pulling documents and putting them in the prompt"?
+
+**A:** Retrieval-Augmented Generation (RAG). A system searches external sources (databases, vector stores, documents) for content relevant to the user's question, then injects the retrieved content into the prompt before asking the LLM to answer. Jules describes the pattern without naming it.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [RAG](GLOSSARY.md#rag-m1-context), [Context Injection](GLOSSARY.md#context-injection-m1-context)
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+**Common wrong answer:** "Fine-tuning" — no, RAG doesn't touch model weights. It's a prompt-engineering pattern, not a training technique.
+
+---
+
 ## Q: The same task "evaluate what I'm eating" produces totally different output from a nutritionist vs a gourmet chef persona. Why?
 
 **A:** Because the persona, not the task, dominates output shape. The nutritionist persona loads health-optimization vocabulary and framing; the gourmet chef persona loads culinary aesthetic and technique-critique framing. Same input, orthogonal analyses.

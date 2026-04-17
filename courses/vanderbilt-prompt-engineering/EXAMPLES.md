@@ -234,6 +234,94 @@ Mary is in the movies.
 
 ---
 
+## Birds Without Data (M1 Context)
+
+**Pattern demonstrated:** [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context) — the ANTI-EXAMPLE (what happens without it)
+
+**Setup:** Bare question with no context. Model has no way to answer.
+
+**Input:**
+```
+How many birds are outside my house?
+```
+
+**Output:**
+```
+As a language model, I don't have the ability to perceive the physical world, so I'm unable to know what's happening outside your house...
+```
+
+**Why it refused:** The model correctly recognized it lacks the data needed to answer. No context = no reasoning possible.
+
+**Try it yourself:** Ask any question about your own private context without providing the data. Watch the refusal pattern. That's the baseline to beat.
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+---
+
+## Birds With Historical Data (M1 Context)
+
+**Pattern demonstrated:** [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context)
+
+**Setup:** Same question — but now with historical bird data injected at the top of the prompt.
+
+**Input:**
+```
+Historical observations of average birds outside my house on a random day:
+  January: 120 birds
+  February: 150 birds
+  March: 210 birds
+  April: 408 birds
+
+It's March. Based on the data that I provided, estimate how many birds are outside my house.
+```
+
+**Output:**
+```
+Based on the historical observations you provided, the average number of birds observed outside your house in March is 210.
+```
+
+**Why it worked:** With the data in the prompt, the model has exactly what it needs to reason. The question went from impossible to trivially answerable — same underlying question, different context availability.
+
+**Try it yourself:** Take any "I need data" question from your own life, format the relevant data above the question, and feed it in. The transformation is dramatic.
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+---
+
+## Birds in the Glass Dome (M1 Context)
+
+**Pattern demonstrated:** [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context) — with [Hidden Assumptions](GLOSSARY.md#hidden-assumptions-m1-context)
+
+**Setup:** Same question + data, PLUS an unusual rule that overrides real-world defaults. Demonstrates that DATA alone isn't enough — hidden rules must also be stated.
+
+**Input:**
+```
+My house is covered by a glass dome. No animals can go in or out. All animals live forever inside the glass dome.
+
+Historical observations (same count every month):
+  January: 120 birds
+  February: 120 birds
+  March: 120 birds
+  April: 120 birds
+
+Based on that data, estimate how many birds are outside my house.
+```
+
+**Output:**
+```
+Based on the new information you provided, appears that the total number of birds outside your house remains constant over time. You mentioned that all animals live forever inside the glass dome. Given these conditions, the total number of birds would remain the same throughout the year.
+
+Answer: 120 birds.
+```
+
+**Why it worked:** The glass-dome rule overrides the default "bird populations fluctuate naturally" assumption. The LLM correctly followed the non-standard rule because it was explicitly stated. Without that rule, the model would have applied real-world priors and produced a different (wrong-for-this-context) answer.
+
+**Try it yourself:** When you have a task with non-default rules (custom business logic, game rules, hypothetical constraints), state them explicitly BEFORE the data and question. The LLM will honor them.
+
+**Source:** Module 1, "Introducing New Information to a Large Language Model"
+
+---
+
 ## Nutritionist (M1 Paper)
 
 **Pattern demonstrated:** [Persona Pattern](PATTERNS.md#persona-pattern-m1-persona)

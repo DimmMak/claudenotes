@@ -88,6 +88,54 @@
 
 ---
 
+## Context Injection (M1 Context)
+
+**Definition:** Placing information the LLM wasn't trained on directly into the prompt so the model can reason about it. Covers both DATA (numbers, documents, private files) and HIDDEN ASSUMPTIONS (unusual rules, organizational context).
+
+**Why it matters:** LLMs have knowledge cutoffs and no access to private/new data. Context injection is THE mechanism for using LLMs on anything beyond general knowledge. Every modern AI app (RAG chatbots, doc Q&A, agent tools) is built on this.
+
+**First introduced:** Module 1, "Introducing New Information to a Large Language Model"
+
+**Cross-links:** [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context), [Training Cutoff](#training-cutoff-m1-context), [RAG](#rag-m1-context)
+
+---
+
+## Training Cutoff (M1 Context)
+
+**Definition:** The date beyond which an LLM has no knowledge — the model was frozen in time at training. ChatGPT's original cutoff was September 2021.
+
+**Why it matters:** Defines the boundary of what the model can answer from memory. Anything after the cutoff (or private to the user) requires context injection.
+
+**First introduced:** Module 1, "Introducing New Information to a Large Language Model"
+
+**Cross-links:** [Context Injection](#context-injection-m1-context)
+
+---
+
+## Hidden Assumptions (M1 Context)
+
+**Definition:** Unusual rules or non-default conditions that must be stated explicitly for the LLM to reason correctly. Anything that deviates from the world's default behavior (e.g., "animals live forever inside this glass dome") must be told to the model.
+
+**Why it matters:** If your reasoning depends on non-standard rules, you MUST surface them. The LLM defaults to real-world assumptions and will apply them silently unless told otherwise.
+
+**First introduced:** Module 1, "Introducing New Information to a Large Language Model"
+
+**Cross-links:** [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context)
+
+---
+
+## RAG (Retrieval-Augmented Generation) (M1 Context)
+
+**Definition:** A pattern where a system searches external sources (databases, documents, web) for relevant content, then injects that content into the LLM's prompt so it can reason about it. Jules describes the pattern without naming it formally.
+
+**Why it matters:** The dominant architecture for production LLM apps — "AI chatbots that know your docs" are all RAG systems. Context injection is the foundation this pattern is built on.
+
+**First introduced:** Module 1, "Introducing New Information to a Large Language Model" (described, not named)
+
+**Cross-links:** [Context Injection](#context-injection-m1-context), [Context Injection Pattern](PATTERNS.md#context-injection-pattern-m1-context)
+
+---
+
 ## Prompt Pattern (formal definition) (M1 Paper)
 
 **Definition:** A reusable solution to a common problem faced when conversing with LLMs — structured analogously to software design patterns. Documents a specific way to structure a prompt so that it solves a particular class of problem (output generation, interaction control, etc.).
