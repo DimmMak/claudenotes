@@ -64,6 +64,16 @@
 
 ---
 
+## "The root prompt is basically a seed to the whole conversation — it provides the rules that must be followed." — Jules White, M1 Guardrails (paraphrase)
+
+**Why it lands:** One-line definition of what makes root prompts different from regular prompts. They don't just ask — they SEED downstream behavior.
+
+**Context:** Explaining how commercial LLM products (ChatGPT, Bing, Bard) use hidden root prompts to shape everything the user sees.
+
+**Source:** Module 1, "Root Prompts"
+
+---
+
 ## "Michelangelo doesn't hit the stone once, look at it, and throw the hammer down. He chisels." — Jules White, M1 Conversation (paraphrase)
 
 **Why it lands:** Single-image explanation of iterative refinement. If the world's greatest sculptor iterates, your prompt engineering should too.

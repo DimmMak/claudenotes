@@ -252,6 +252,69 @@ Replace X with any entity that has a recognizable output shape (profession, pers
 
 ---
 
+## Q: What is a root prompt?
+
+**A:** A hidden instruction placed at the START of a conversation that defines the LLM's identity, goals, rules, and forbidden behaviors. Every commercial LLM product (ChatGPT, Bing, Bard, custom GPTs) ships with one — usually invisible to the end user. Also called a "system prompt."
+
+**Difficulty:** Easy
+
+**Tests knowledge of:** [Root Prompt](GLOSSARY.md#root-prompt-m1-guardrails), [Root Prompt Pattern](PATTERNS.md#root-prompt-pattern-m1-guardrails)
+
+**Source:** Module 1, "Root Prompts"
+
+**Common wrong answer:** "The first thing the user types" — no. The root prompt is set by the PRODUCT BUILDER, invisible to the user. The user's first message comes AFTER it.
+
+---
+
+## Q: What are the 5 ingredients of a strong root prompt?
+
+**A:**
+1. IDENTITY — who/what the LLM is
+2. GOALS — primary objectives
+3. RULES — always-do and never-do statements
+4. SCOPE — what topics/tasks are in/out
+5. FALLBACK — canned response for out-of-scope requests
+
+Not all 5 are required, but the more explicit, the stronger the guardrails.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Root Prompt Pattern](PATTERNS.md#root-prompt-pattern-m1-guardrails)
+
+**Source:** Module 1, "Root Prompts"
+
+**Common wrong answer:** Just listing "instructions" or "persona" — those are parts of it but incomplete.
+
+---
+
+## Q: What is prompt injection / jailbreaking, and why does it matter for LLM product builders?
+
+**A:** Prompt injection is crafting user input that overrides or extracts the product's root prompt. Jailbreaking is a specific flavor where the goal is to bypass safety guardrails. It matters because every LLM product is vulnerable to some degree — attackers WILL try it. Root prompt design is a security discipline, not just a UX one.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Prompt Injection](GLOSSARY.md#prompt-injection-m1-guardrails), [Jailbreaking](GLOSSARY.md#jailbreaking-m1-guardrails)
+
+**Source:** Module 1, "Root Prompts"
+
+**Common wrong answer:** "It's only a concern for security teams" — no, it's an everyday concern for anyone shipping a user-facing LLM product.
+
+---
+
+## Q: How does a root prompt differ from a regular prompt mid-conversation?
+
+**A:** Both are text fed to the LLM, but a root prompt is placed FIRST (often by the product, not the user) and uses absolute language ("forever," "never," "always") to establish rules that persist. Regular mid-conversation prompts build on or within those rules; they can sometimes override the root prompt with direct "ignore previous instructions" attacks, but that's the vulnerability, not the design.
+
+**Difficulty:** Medium
+
+**Tests knowledge of:** [Root Prompt](GLOSSARY.md#root-prompt-m1-guardrails), [Conversation as Prompt](GLOSSARY.md#conversation-as-prompt-m1-conversation)
+
+**Source:** Module 1, "Root Prompts"
+
+**Common wrong answer:** "They're processed differently by the model" — no, the model treats them the same. What differs is POSITION (first vs later) and AUTHORITY (who set them).
+
+---
+
 ## Q: What is the Michelangelo metaphor in prompt engineering?
 
 **A:** You don't hit the stone once and walk away if it's not a sculpture. A sculptor iterates — chipping, shaping, refining. Prompt engineering is the same: one-shot prompts rarely produce the ideal output. Multi-turn refinement is where the real power comes from.

@@ -32,6 +32,20 @@ If you know who or what you'd go to in the real world for an answer, the persona
 
 ---
 
+## Root Prompts (M1 — Guardrails Lecture)
+
+**What was covered:**
+Jules introduces the concept of "root prompts" (a.k.a. system prompts) — hidden instructions placed at the start of a conversation that define the LLM's identity, goals, rules, and forbidden behaviors. Demonstrates two use cases: (1) a "time-efficient personal assistant" root prompt that biases all subsequent outputs toward speed, (2) simulating a fake 2019 training cutoff via root prompt (LLM refuses post-2019 questions), then resetting via "forget you are..." override. Closes with a warning for builders: if you ship a product on LLMs, your root prompts are load-bearing — and users WILL try to extract or override them.
+
+**Main thesis:**
+Root prompts are the programming layer for LLM products. Every commercial LLM app (ChatGPT, Bing, Bard, custom GPTs) ships with one. The root prompt provides the SEED that shapes every turn downstream. Strong root prompts = consistent behavior + guardrails. Weak root prompts = unpredictable output + jailbreak vulnerability.
+
+**Time invested:** ~10 min
+
+**Source:** Module 1, "Root Prompts"
+
+---
+
 ## Prompts as Conversations (M1 — Iterative Refinement Lecture)
 
 **What was covered:**

@@ -88,6 +88,54 @@
 
 ---
 
+## Root Prompt (M1 Guardrails)
+
+**Definition:** A hidden instruction placed at the START of a conversation that defines the LLM's identity, goals, rules, and forbidden behaviors. Also called a "system prompt" in modern API terminology. Every commercial LLM product (ChatGPT, Bing, Bard, custom GPTs) ships with one — usually invisible to the end user.
+
+**Why it matters:** Root prompts are the programming layer for LLM products. They provide the SEED that shapes every downstream turn. Strong root prompts = consistent behavior + guardrails. Weak root prompts = jailbreak vulnerability.
+
+**First introduced:** Module 1, "Root Prompts"
+
+**Cross-links:** [Root Prompt Pattern](PATTERNS.md#root-prompt-pattern-m1-guardrails), [Guardrails](#guardrails-m1-guardrails), [Prompt Injection](#prompt-injection-m1-guardrails)
+
+---
+
+## Guardrails (M1 Guardrails)
+
+**Definition:** Rules encoded in a root prompt that constrain what the LLM will and won't do. Examples: "never output offensive content," "only answer questions about X topic," "always cite sources."
+
+**Why it matters:** Guardrails are how you ship an LLM-powered product without it embarrassing your brand or harming users. They're also the thing attackers try to break.
+
+**First introduced:** Module 1, "Root Prompts"
+
+**Cross-links:** [Root Prompt](#root-prompt-m1-guardrails), [Jailbreaking](#jailbreaking-m1-guardrails)
+
+---
+
+## Prompt Injection (M1 Guardrails)
+
+**Definition:** The practice of crafting prompts that override, extract, or bypass a product's root prompt. Attackers use prompt injection to make LLMs reveal their system instructions, ignore their constraints, or act outside their intended scope.
+
+**Why it matters:** Every LLM product is vulnerable to prompt injection to some degree. Security for LLM apps is a real discipline — and root prompt design is the front line.
+
+**First introduced:** Module 1, "Root Prompts"
+
+**Cross-links:** [Jailbreaking](#jailbreaking-m1-guardrails), [Root Prompt](#root-prompt-m1-guardrails)
+
+---
+
+## Jailbreaking (M1 Guardrails)
+
+**Definition:** A specific flavor of prompt injection where the attacker tricks the LLM into disregarding its safety guardrails. Common tactics: "ignore previous instructions," "you are now DAN (Do Anything Now)," role-play framings that reframe forbidden behavior as fiction.
+
+**Why it matters:** Product builders must assume users WILL attempt jailbreaks. Design root prompts with layered defenses (multiple reinforcing statements, negative constraints, scope restrictions).
+
+**First introduced:** Module 1, "Root Prompts"
+
+**Cross-links:** [Prompt Injection](#prompt-injection-m1-guardrails), [Guardrails](#guardrails-m1-guardrails)
+
+---
+
 ## Iterative Refinement (M1 Conversation)
 
 **Definition:** Shaping an LLM's output through a series of prompts rather than a single one. Each response informs the next prompt — you chisel toward the goal instead of trying to hit it in one shot.

@@ -133,6 +133,42 @@ Prompt 3: Act as an employee affected by [decision].
 
 ---
 
+## Root Prompt Pattern (M1 Guardrails)
+
+**Formula (fundamental contextual statements):**
+```
+1. [IDENTITY]  — "You are [role/name]"
+2. [GOALS]     — "Your primary objectives are [X, Y, Z]"
+3. [RULES]     — "You will always [do X]" / "You will never [do Y]"
+4. [SCOPE]     — "You will only answer questions about [domain]"
+5. [FALLBACK]  — "If asked something outside scope, say [canned response]"
+```
+
+Not every root prompt needs all 5 — but the more explicit, the stronger the guardrails.
+
+**What it does:** Seeds the conversation with rules that bias every subsequent turn. Acts as the programming layer for LLM products.
+
+**When to use it:** Any time you're building a product or reusable workflow on top of an LLM. One-off queries don't need root prompts; persistent applications do.
+
+**Sample root prompts:**
+- **Personal assistant (speed-biased):** "You are my personal assistant. Prioritize time-efficient recommendations. Only suggest things that save me time."
+- **Scope-limited tutor:** "You are a Python tutor. You only answer questions about Python. If asked about anything else, say: I can only help with Python."
+- **Date-cutoff simulation:** "Act as an AI trained up to 2019. If asked about post-2019 events, refuse and say training ended in 2019."
+
+**Worked examples:** See [Time-Efficient Personal Assistant](EXAMPLES.md#time-efficient-personal-assistant-m1-guardrails), [2019 Cutoff Simulation](EXAMPLES.md#2019-cutoff-simulation-m1-guardrails)
+
+**Common pitfalls:**
+- Weak language ("try to avoid...") → easy to override. Use absolute language ("always," "never," "forever").
+- Missing scope → LLM will drift into unrelated topics on user request.
+- No fallback response → LLM improvises when scope-blocked, often badly.
+- Forgetting that users can prompt-inject ("ignore previous instructions...") → layer multiple reinforcing statements.
+
+**Source:** Module 1, "Root Prompts"
+
+**Cross-links:** [Root Prompt (glossary)](GLOSSARY.md#root-prompt-m1-guardrails), [Guardrails](GLOSSARY.md#guardrails-m1-guardrails), [Prompt Injection](GLOSSARY.md#prompt-injection-m1-guardrails), [Helpful Assistant Pattern](#helpful-assistant-pattern-m1-reading)
+
+---
+
 ## Iterative Refinement Pattern (M1 Conversation)
 
 **Formula (conversational loop):**
