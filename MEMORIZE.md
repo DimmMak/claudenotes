@@ -10,7 +10,11 @@
 
 _Add the 1-3 sentence summaries that change how I think. The stuff I'd tell a friend at a coffee shop._
 
-- _(Module 1) ..._
+- **Separation of concerns** — one job per file, one job per agent, one job per command. The oldest rule in software engineering. Applies to file structure, prompt design, agent factories, and how you organize your study notes. Same principle, infinite domains.
+- **Persona = the role the LLM is acting out** — every prompt invokes one (explicit or default). Specificity of persona = specificity of output. (M1 L2)
+- **You're ALWAYS using a persona** — even silence about it defaults to "helpful hedging assistant." The pattern doesn't ADD personality, it OVERRIDES the default.
+- **LLMs are autoregressive next-token predictors** — every output is built one token at a time, each becoming input for the next. (M1 fundamentals)
+- **Leverage scales with constraint** — the more power an agent has, the tighter its contract must be. Max power + max discipline = safe leverage. Remove either side and you get rigidity (too tight) or data loss (too loose). Like an F1 car: wide possibility space + tight guardrails = fast AND survivable.
 - _(Module 2) ..._
 - _(Module 3) ..._
 
